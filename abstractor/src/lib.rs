@@ -1,14 +1,17 @@
+mod simple_tokens;
+mod tokens;
+mod tests;
+mod util;
+
+use crate::tokens::RootToken;
+
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub fn parse(_input: &str) -> RootToken {
+    let root = RootToken {
+        children: vec![],
+    };
+    root
 }
